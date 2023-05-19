@@ -1,0 +1,73 @@
+import os
+
+fecha = input("Fecha de los CFES: ")
+
+ruts ={
+    "218976220011":"AM",
+    "214778800019":"ANZALONE VIC",
+    "215004400012":"ARISPE",
+    "215933110015":"ARCAMILL",
+    "218447070016":"BELLO VIC",
+    "210757030017":"BAILLO",
+    "219344450019":"BARROS",
+    "214621350012":"CAPRANI",
+    "211092380016":"CARUSO",
+    "110192070014":"CAXAL",
+    "217558420017":"CHAMIT",
+    "215437370012":"CABONIL",
+    "215272400018":"DYLOR",
+    "217523880011":"DIAMANTO",
+    "217345440010":"TIMO",
+    "217087400011":"DIOS",
+    "215550430017":"ESTILO",
+    "216904180017":"ETALMON",
+    "218020480011":"EYCTOME",
+    "218366280010":"FABER",
+    "217813800010":"FERREBEL",
+    "218657810016":"FERREIRA E",
+    "218782100010":"GALLI",
+    "212989720019":"GPINEIRO",
+    "214256670016":"GEOSUR",
+    "213299100019":"GROFAL",
+    "215143190017":"LIDERP",
+    "214954370018":"MANADOL",
+    "219085170015":"MANTO",
+    "217523020012":"MALURE",
+    "215071060015":"MEDIF",
+    "214580140019":"MISS15",
+    "216904150010":"MONTGARD",
+    "216860170011":"MSD",
+    "100619360018":"MOS Y FER",
+    "217315240013":"NIELNNA",
+    "219131440016":"OSCAR PI",
+    "218254560011":"ROMINA PI",
+    "218575480012":"PRO IGRO",
+    "217408220012":"RADIOCOM",
+    "219034850019":"RUETE Y DE P",
+    "211586630013":"ROSSI",
+    "213036750012":"SACHETTI",
+    "219110910013":"SALSWING",
+    "215044530014":"SANTANA",
+    "218808430012":"CLARO PIR",
+    "217415650019":"SOLARGROUP",
+    "216182170011":"STHAM",
+    "216501020011":"TACONFLEX",
+    "214871990019":"TINOPLEN",
+    "216021360013":"UNIGRES",
+}
+
+#rut = ruts["216021360013"]
+keys = ruts.keys()
+rut_list = []
+
+for key in keys:
+    rut_list.append(key)
+
+
+for file in os.listdir():
+    print(file)
+    for rut in rut_list:
+        if rut in file:
+            name = ruts[f"{rut}"]
+            os.rename (f"C:/Users/USUARIO/Documents/Ove/CFES/{file}",
+            f"/Users/USUARIO/Documents/Ove/CFES/CFES {fecha} {name}.xls")
